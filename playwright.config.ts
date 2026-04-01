@@ -39,6 +39,7 @@ export default defineConfig({
       use: { browserName: 'chromium' },
     },
 
+
     /* Bỏ Firefox và Webkit ở dưới này 
     {
       name: 'firefox',

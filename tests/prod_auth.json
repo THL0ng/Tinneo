@@ -1,0 +1,115 @@
+{
+  "cookies": [
+    {
+      "name": "PHPSESSID",
+      "value": "9132d08c6c9385b90e18cf4b1511f704",
+      "domain": "tinneo.care",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "pll_language",
+      "value": "fr",
+      "domain": "tinneo.care",
+      "path": "/",
+      "expires": 1806553816.121199,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "CLID",
+      "value": "94506287b19a416997d30f195199d934.20260401.20270401",
+      "domain": "www.clarity.ms",
+      "path": "/",
+      "expires": 1806553817.668765,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_clck",
+      "value": "1ez0mg5%5E2%5Eg4u%5E0%5E2282",
+      "domain": ".tinneo.care",
+      "path": "/",
+      "expires": 1806553818,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cookieyes-consent",
+      "value": "consentid:T25POEQxMDdKcDhiNnpwNmRnTVQ0T1I0MU9hb2Rzc1Q,consent:no,action:,necessary:yes,functional:no,analytics:no,performance:no,advertisement:no",
+      "domain": "tinneo.care",
+      "path": "/",
+      "expires": 1806553819,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "_clsk",
+      "value": "66oqss%5E1775017819103%5E1%5E1%5Eo.clarity.ms%2Fcollect",
+      "domain": ".tinneo.care",
+      "path": "/",
+      "expires": 1775104219,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__hstc",
+      "value": "217689993.b5623bb92bdf95379b3ecca2bc6f110c.1775017824402.1775017824402.1775017824402.1",
+      "domain": "tinneo.care",
+      "path": "/",
+      "expires": 1790569824,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "hubspotutk",
+      "value": "b5623bb92bdf95379b3ecca2bc6f110c",
+      "domain": "tinneo.care",
+      "path": "/",
+      "expires": 1790569824,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__hssrc",
+      "value": "1",
+      "domain": "tinneo.care",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__hssc",
+      "value": "217689993.1.1775017824403",
+      "domain": "tinneo.care",
+      "path": "/",
+      "expires": 1775019624,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://tinneo.care",
+      "localStorage": [
+        {
+          "name": "wc_cart_hash_3bb51d49bac70d2365a1d5efc9105810",
+          "value": ""
+        }
+      ]
+    }
+  ]
+}
