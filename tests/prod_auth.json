@@ -2,7 +2,7 @@
   "cookies": [
     {
       "name": "PHPSESSID",
-      "value": "9132d08c6c9385b90e18cf4b1511f704",
+      "value": "e052bd8ee607ad0a0bdd4c5c8a4c0ef6",
       "domain": "tinneo.care",
       "path": "/",
       "expires": -1,
@@ -15,67 +15,57 @@
       "value": "fr",
       "domain": "tinneo.care",
       "path": "/",
-      "expires": 1806553816.121199,
+      "expires": 1806649669.391249,
       "httpOnly": false,
       "secure": true,
       "sameSite": "Lax"
     },
     {
       "name": "CLID",
-      "value": "94506287b19a416997d30f195199d934.20260401.20270401",
+      "value": "79333e6b704d420fa737278dcb5d2ac0.20260402.20270402",
       "domain": "www.clarity.ms",
       "path": "/",
-      "expires": 1806553817.668765,
+      "expires": 1806649670.479573,
       "httpOnly": true,
       "secure": true,
       "sameSite": "None"
     },
     {
       "name": "_clck",
-      "value": "1ez0mg5%5E2%5Eg4u%5E0%5E2282",
+      "value": "f0ratd%5E2%5Eg4v%5E0%5E2283",
       "domain": ".tinneo.care",
       "path": "/",
-      "expires": 1806553818,
+      "expires": 1806649670,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "cookieyes-consent",
-      "value": "consentid:T25POEQxMDdKcDhiNnpwNmRnTVQ0T1I0MU9hb2Rzc1Q,consent:no,action:,necessary:yes,functional:no,analytics:no,performance:no,advertisement:no",
+      "value": "consentid:ZmtWMFhNeHJ4a3B5bXozWTg0ZUs0V3pnTkNLTEpya0E,consent:no,action:,necessary:yes,functional:no,analytics:no,performance:no,advertisement:no",
       "domain": "tinneo.care",
       "path": "/",
-      "expires": 1806553819,
+      "expires": 1806649935,
       "httpOnly": false,
       "secure": true,
       "sameSite": "Strict"
     },
     {
-      "name": "_clsk",
-      "value": "66oqss%5E1775017819103%5E1%5E1%5Eo.clarity.ms%2Fcollect",
-      "domain": ".tinneo.care",
-      "path": "/",
-      "expires": 1775104219,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
       "name": "__hstc",
-      "value": "217689993.b5623bb92bdf95379b3ecca2bc6f110c.1775017824402.1775017824402.1775017824402.1",
+      "value": "217689993.2482ba98a1380fc44400e73b6e779d11.1775113671972.1775113671972.1775113671972.1",
       "domain": "tinneo.care",
       "path": "/",
-      "expires": 1790569824,
+      "expires": 1790665936,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "hubspotutk",
-      "value": "b5623bb92bdf95379b3ecca2bc6f110c",
+      "value": "2482ba98a1380fc44400e73b6e779d11",
       "domain": "tinneo.care",
       "path": "/",
-      "expires": 1790569824,
+      "expires": 1790665936,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -91,14 +81,114 @@
       "sameSite": "Lax"
     },
     {
+      "name": "MUID",
+      "value": "2B01A721C542632D0AAFB00EC4246225",
+      "domain": ".bing.com",
+      "path": "/",
+      "expires": 1808809672.354523,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "MR",
+      "value": "0",
+      "domain": ".c.bing.com",
+      "path": "/",
+      "expires": 1775718472.354599,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "SRM_B",
+      "value": "2B01A721C542632D0AAFB00EC4246225",
+      "domain": ".c.bing.com",
+      "path": "/",
+      "expires": 1808809672.354626,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "SM",
+      "value": "C",
+      "domain": ".c.clarity.ms",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "MUID",
+      "value": "2B01A721C542632D0AAFB00EC4246225",
+      "domain": ".clarity.ms",
+      "path": "/",
+      "expires": 1808809672.439998,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "MR",
+      "value": "0",
+      "domain": ".c.clarity.ms",
+      "path": "/",
+      "expires": 1775718472.440064,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ANONCHK",
+      "value": "0",
+      "domain": ".c.clarity.ms",
+      "path": "/",
+      "expires": 1775114272.440093,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
       "name": "__hssc",
-      "value": "217689993.1.1775017824403",
+      "value": "217689993.2.1775113671973",
       "domain": "tinneo.care",
       "path": "/",
-      "expires": 1775019624,
+      "expires": 1775115736,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
+    },
+    {
+      "name": "_clsk",
+      "value": "143zbzi%5E1775113936370%5E2%5E1%5Eo.clarity.ms%2Fcollect",
+      "domain": ".tinneo.care",
+      "path": "/",
+      "expires": 1775200336,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "oiZ9W2PEC2UDcjvsKnrPP9sdX01wXSnJq.iSn9mqQQk-1775113936-1.0.1.1-qEBDHD_AbJERl55sIYDx5dbk1XPElLwkdyNh9DyAfMx.DxlZc91_yFzymWtSPvyjTgKmZt33CeLPGnmo0BtR5vGWWcn9FobmLFW.OhqmbAg",
+      "domain": ".hubspot.com",
+      "path": "/",
+      "expires": 1775115736.999677,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_cfuvid",
+      "value": "QgQy9pTuxbaORnw0PAS77MRvD7fxmv4YLaC2Rwz64mw-1775113936751-0.0.1.1-604800000",
+      "domain": ".hubspot.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
     }
   ],
   "origins": [

@@ -6,43 +6,13 @@ import pixelmatch from 'pixelmatch';
 require('dotenv').config();
 
 // ─── 1. CẤU HÌNH (CONFIG) ─────────────────────────────────────
-const PROD_URL    = 'https://welcome:M0sk1t!@tinneo.care';
+const PROD_USER   = process.env.PLAYWRIGHT_USER;
+const PROD_PASS   = process.env.PLAYWRIGHT_PASS;
+const PROD_URL    = `https://${PROD_USER}:${PROD_PASS}@tinneo.care`;
+const PROD_URL_LOG = 'https://tinneo.care';
 const PREPROD_URL = 'https://acouzen.officience.com';
 const REPORT_DIR  = path.resolve('D:/Tineo/FINAL_AUDIT_REPORT');
 const MAX_DEPTH   = 2;
-const AUTH_FILE   = path.resolve(__dirname, 'prod_auth.json');
-const PROD_USER = process.env.PLAYWRIGHT_USER;
-const PROD_PASS = process.env.PLAYWRIGHT_PASS;
-
-async function loginBasicAuth(browser: any) {
-  // Tạo context mới có kèm thông tin đăng nhập từ file .env
-  const context = await browser.newContext({
-    httpCredentials: {
-      // process.env.TÊN_BIẾN phải khớp với tên trong file .env của bạn
-      username: PROD_USER || '', 
-      password: PROD_PASS || '',
-    }
-  });
-
-  const page = await context.newPage();
-  
-  try {
-    console.log("🔐 [STEP 1] Đang thực hiện login vào PROD bằng Basic Auth...");
-    
-    // Đi tới URL, lúc này trình duyệt sẽ tự điền User/Pass nhờ cấu hình ở trên
-    await page.goto(PROD_URL, { waitUntil: 'networkidle', timeout: 60000 });
-    
-    // Lưu lại trạng thái đăng nhập (session/cookie) vào file json
-    await context.storageState({ path: AUTH_FILE });
-    
-    console.log("✅ Đăng nhập thành công qua URL Auth và đã lưu Session.");
-  } catch (err: any) {
-    console.error("❌ Vẫn không login được. Kiểm tra lại User/Pass trong .env:", err.message);
-  } finally {
-    // Đóng context tạm thời sau khi đã lấy được file AUTH_FILE
-    await context.close();
-  }
-}
 
 // ─── 2. HÀM CRAWL LẤY TẤT CẢ CÁC TRANG ────────────────────────
 async function crawlAllRoutes(baseUrl: string, maxDepth: number): Promise<string[]> {
@@ -66,7 +36,8 @@ async function crawlAllRoutes(baseUrl: string, maxDepth: number): Promise<string
     routes.push(route);
 
     try {
-      console.log(`🔍 Crawling: ${baseUrl}${route}`);
+      const displayUrl = baseUrl.replace(/\/\/[^@]+@/, '//');
+      console.log(`🔍 Crawling: ${displayUrl}${route}`);
       await page.goto(`${baseUrl}${route}`, { waitUntil: 'networkidle', timeout: 45000 });
       await page.waitForTimeout(2000);
 
@@ -92,7 +63,6 @@ async function crawlAllRoutes(baseUrl: string, maxDepth: number): Promise<string
   return routes.length > 0 ? [...new Set(routes)] : ['/'];
 }
 
-// ─── 3. HÀM SO SÁNH CÓ KẺ KHUNG HIGHLIGHT (BOUNDING BOX) ──────
 // ─── 3. HÀM SO SÁNH THEO TỪNG VÙNG ──────────────────────────
 function compareVisualWithHighlight(prodPath: string, preprodPath: string, diffPath: string, route: string) {
   if (!fs.existsSync(prodPath) || !fs.existsSync(preprodPath)) return null;
@@ -247,13 +217,13 @@ test.describe('Full Site Audit with Bounding Box', () => {
     test.setTimeout(1200000);
 
     for (const route of pagesToTest) {
-      const key  = route.replace(/[^a-z0-9]/gi, '_') || 'home';
+      const key   = route.replace(/[^a-z0-9]/gi, '_') || 'home';
       const pProd = path.join(REPORT_DIR, `PROD_${key}.png`);
       const pPre  = path.join(REPORT_DIR, `PRE_${key}.png`);
       const pDiff = path.join(REPORT_DIR, `DIFF_${key}.png`);
 
       const context = await browser.newContext({
-        viewport: { width: 1440, height: 900 },
+        viewport:  { width: 1440, height: 900 },
         userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
       });
       const page = await context.newPage();
