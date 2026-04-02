@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { PNG } from 'pngjs';
 import pixelmatch from 'pixelmatch';
+require('dotenv').config();
 
 // ─── 1. CẤU HÌNH (CONFIG) ─────────────────────────────────────
 const PROD_URL    = 'https://welcome:M0sk1t!@tinneo.care';
@@ -10,17 +11,35 @@ const PREPROD_URL = 'https://acouzen.officience.com';
 const REPORT_DIR  = path.resolve('D:/Tineo/FINAL_AUDIT_REPORT');
 const MAX_DEPTH   = 2;
 const AUTH_FILE   = path.resolve(__dirname, 'prod_auth.json');
+const PROD_USER = process.env.PLAYWRIGHT_USER;
+const PROD_PASS = process.env.PLAYWRIGHT_PASS;
 
 async function loginBasicAuth(browser: any) {
-  const context = await browser.newContext();
+  // Tạo context mới có kèm thông tin đăng nhập từ file .env
+  const context = await browser.newContext({
+    httpCredentials: {
+      // process.env.TÊN_BIẾN phải khớp với tên trong file .env của bạn
+      username: PROD_USER || '', 
+      password: PROD_PASS || '',
+    }
+  });
+
   const page = await context.newPage();
+  
   try {
-    await page.goto(PROD_URL, { waitUntil: 'networkidle' });
+    console.log("🔐 [STEP 1] Đang thực hiện login vào PROD bằng Basic Auth...");
+    
+    // Đi tới URL, lúc này trình duyệt sẽ tự điền User/Pass nhờ cấu hình ở trên
+    await page.goto(PROD_URL, { waitUntil: 'networkidle', timeout: 60000 });
+    
+    // Lưu lại trạng thái đăng nhập (session/cookie) vào file json
     await context.storageState({ path: AUTH_FILE });
-    console.log("✅ Đăng nhập thành công qua URL Auth.");
+    
+    console.log("✅ Đăng nhập thành công qua URL Auth và đã lưu Session.");
   } catch (err: any) {
-    console.error("❌ Vẫn không login được:", err.message);
+    console.error("❌ Vẫn không login được. Kiểm tra lại User/Pass trong .env:", err.message);
   } finally {
+    // Đóng context tạm thời sau khi đã lấy được file AUTH_FILE
     await context.close();
   }
 }
